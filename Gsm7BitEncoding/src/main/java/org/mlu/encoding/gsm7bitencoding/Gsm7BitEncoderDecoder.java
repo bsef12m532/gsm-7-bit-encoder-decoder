@@ -72,8 +72,8 @@ public class Gsm7BitEncoderDecoder
         String ret = "";
         String temp = "";
         int length = binary.length();
-        int div = length / 8;
-        int missingLenth = 8 - (length - (div * 8));
+        int rem = length % 8;
+        int missingLenth = 8 - rem;
         StringBuilder zeros = new StringBuilder();
         for(int i = 0; i < missingLenth; i++) {
             zeros.append("0");
