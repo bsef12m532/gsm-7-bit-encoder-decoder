@@ -1,0 +1,11 @@
+#summary One-sentence summary of this page.
+
+==Dependency Information==
+====Maven====
+{{{
+<dependency>
+  <groupId>org.mlu.encoding</groupId>
+  <artifactId>Gsm7BitEncoding</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</dependency>
+}}}
