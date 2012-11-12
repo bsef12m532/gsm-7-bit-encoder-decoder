@@ -4,11 +4,11 @@
 
     <groupId>org.mlu.encoding</groupId>
     <artifactId>Gsm7BitEncoding</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <name>Gsm7BitEncoding</name>
-    <url>http://maven.apache.org</url>
+    <url>http://code.google.com/p/gsm-7-bit-encoder-decoder</url>
   
     <description>Java implementation to encode and decode GSM 7 bits which is used on mobile networks for ussd, sms etc.</description>
     
@@ -51,8 +51,13 @@
     </issueManagement>
     <distributionManagement>
         <site>
-            <url>http://code.google.com/p/gsm-7-bit-encoder-decoder/</url>
+            <url>http://code.google.com/p/gsm-7-bit-encoder-decoder</url>
         </site>
+        <repository>
+            <id>google-code-repo-id</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            
+        </repository>
     </distributionManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -67,7 +72,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>Gsm7BitEncoding</finalName>
+        <!--<finalName>Gsm7BitEncoding</finalName>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
