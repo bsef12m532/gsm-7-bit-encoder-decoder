@@ -20,8 +20,13 @@ package org.mlu.encoding.gsm7bitencoding;
  * 
  * GSM 7 Bit implementation class
  * 
- * Generally you would extend this class 
- *
+ * Converts gsm7bit encoding to ascii and vice versa. Sources of gsm 7 bit
+ * encoding are as follows: <ul> <li>http://sms.24cro.com/op_1_4_en.htm, this
+ * also allows you type something and then see the output on the web</li>
+ * <li>http://www.memex.ca/docs/F101119B_Standard_ASCII_Table.pdf, this contains
+ * ascii table</li> <li>http://www.developershome.com/sms/gsmAlphabet.asp,
+ * contains mapping between ascii and gsm7bit table</li> </ul>
+ * 
  * File: Gsm7BitEncoderDecoder.java
  * 
  * @author Mlungisi Sincuba
