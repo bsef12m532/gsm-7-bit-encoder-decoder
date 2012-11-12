@@ -10,7 +10,7 @@ public class Gsm7BitEncoderDecoder
     /**
      *
      * @param ascci to be encoded to gsm7 bit
-     * @return
+     * @return encoded ascci to gsm 7 bit
      */
     public String encode(String ascci) {
         StringBuilder sb = new StringBuilder();
@@ -34,7 +34,7 @@ public class Gsm7BitEncoderDecoder
     /**
      * 
      * @param hex to be decoded
-     * @return 
+     * @return decoded gsm 7 bit to ascci 
      */
     public String decode(String hex) {
         StringBuilder binary = new StringBuilder();
@@ -57,6 +57,11 @@ public class Gsm7BitEncoderDecoder
         return decoded.toString();
     }
 
+    /**
+     * 
+     * @param hex hex be converted to 8 bit binary
+     * @return 8 bit binary
+     */
     private String fromHexTo8BitBinary(String hex) {
         StringBuilder ret = new StringBuilder();
         String binary = Integer.toBinaryString(Integer.parseInt(hex, 16));//Convert hex to binary
@@ -68,6 +73,11 @@ public class Gsm7BitEncoderDecoder
         return ret.toString();
     }
 
+    /**
+     * 
+     * @param binary to be converted to hex
+     * @return hex string
+     */
     private String from7BitBinaryToHexReversed(String binary) {
         String ret = "";
         String temp = "";
@@ -93,6 +103,11 @@ public class Gsm7BitEncoderDecoder
         return ret.toUpperCase();
     }
 
+    /**
+     * 
+     * @param binaryStr to be made 7 bits bianary
+     * @return 7 bit binary
+     */
     private String makeSevenBits(String binaryStr) {
         String ret = "";
         StringBuilder zeros = new StringBuilder();
@@ -104,6 +119,10 @@ public class Gsm7BitEncoderDecoder
         ret = zeros + binaryStr;
         return ret;
     }
+    
+    /**
+     * GSM 7 bit table
+     */
     static final int[] GSM7CHARS = {
         0x0040, 0x00A3, 0x0024, 0x00A5, 0x00E8, 0x00E9, 0x00F9, 0x00EC,
         0x00F2, 0x00E7, 0x000A, 0x00D8, 0x00F8, 0x000D, 0x00C5, 0x00E5,
@@ -137,6 +156,7 @@ public class Gsm7BitEncoderDecoder
         -1, -1, -1, -1, -1, -1, -1, -1,
         -1, -1, -1, -1, -1, -1, -1, -1,
         -1, -1, -1, -1, -1, -1, -1, -1,};
+    
     static final int[] GSM7CHARS_DEFAULT = {
         -1, -1, -1, -1, -1, -1, -1, -1,
         -1, -1, 0x000C, -1, -1, -1, -1, -1,
