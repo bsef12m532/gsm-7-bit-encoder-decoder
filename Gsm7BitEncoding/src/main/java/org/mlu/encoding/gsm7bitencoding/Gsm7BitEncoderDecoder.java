@@ -13,7 +13,7 @@ public class Gsm7BitEncoderDecoder
      * @return
      */
     public String encode(String ascci) {
-        String encoded = "";
+        StringBuilder sb = new StringBuilder();
         int length = ascci.length();
         int gsm7Length = GSM7CHARS.length;
         for (int i = length; i > 0; i--) {
@@ -23,11 +23,12 @@ public class Gsm7BitEncoderDecoder
                 
                 if ((char) GSM7CHARS[j] == c) {
                     int num = GSM7CHARS[j];
-                    encoded += makeSevenBits(Integer.toBinaryString(num));
+                    sb.append(makeSevenBits(Integer.toBinaryString(num)));
                 }
             }
         }
-        encoded = from7BitBinaryToHexReversed(encoded);
+        String encoded = from7BitBinaryToHexReversed(sb.toString());
+        //encoded = from7BitBinaryToHexReversed(encoded);
         return encoded;
     }
 
