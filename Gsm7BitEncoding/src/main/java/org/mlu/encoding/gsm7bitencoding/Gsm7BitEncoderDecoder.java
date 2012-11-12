@@ -28,7 +28,6 @@ public class Gsm7BitEncoderDecoder
             }
         }
         String encoded = from7BitBinaryToHexReversed(sb.toString());
-        //encoded = from7BitBinaryToHexReversed(encoded);
         return encoded;
     }
 
