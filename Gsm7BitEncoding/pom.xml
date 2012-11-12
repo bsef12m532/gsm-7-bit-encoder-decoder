@@ -10,7 +10,7 @@
     <name>Gsm7BitEncoding</name>
     <url>http://maven.apache.org</url>
   
-    <description>A very light and easy jdbc project which come with default CRUD for any table/POJO mpping</description>
+    <description>Java implementation to encode and decode GSM 7 bits which is used on mobile networks for ussd, sms etc.</description>
     
     <licenses>
         <license>
@@ -45,6 +45,15 @@
         <url>https://https://gsm-7-bit-encoder-decoder.googlecode.com/svn/trunk</url>
     </scm>
 
+    <issueManagement>
+        <system>Google Code</system>
+        <url>http://code.google.com/p/gsm-7-bit-encoder-decoder/adminIssues</url>
+    </issueManagement>
+    <distributionManagement>
+        <site>
+            <url>http://code.google.com/p/gsm-7-bit-encoder-decoder/</url>
+        </site>
+    </distributionManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -123,6 +132,7 @@
                             <version>2.2</version>
                         </plugin>
                     </reportPlugins>
+                    
                 </configuration>
             </plugin> 
             
