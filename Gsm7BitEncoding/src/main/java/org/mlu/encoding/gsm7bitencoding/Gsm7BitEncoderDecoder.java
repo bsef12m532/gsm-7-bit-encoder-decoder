@@ -37,12 +37,12 @@ public class Gsm7BitEncoderDecoder
      * @return 
      */
     public String decode(String hex) {
-        String binary = "";
-        String decoded = "";
+        StringBuilder binary = new StringBuilder();
+        StringBuilder decoded = new StringBuilder();
         int length = hex.length();
         for (int i = length; i >= 2; i -= 2) {
             String twos = hex.substring((i - 2), i);//2 characters at a time on reverse direction
-            binary += fromHexTo8BitBinary(twos);//Convert to 8 bit binary
+            binary.append(fromHexTo8BitBinary(twos));//Convert to 8 bit binary
         }
         int gsm7Length = GSM7CHARS.length;
         for (int i = binary.length(); i >= 7; i -= 7) {
@@ -50,23 +50,22 @@ public class Gsm7BitEncoderDecoder
             int decimalOfSeven = Integer.parseInt(seven, 2);
             for (int j = 0; j < gsm7Length; j++) {
                 if (GSM7CHARS[j] == decimalOfSeven) {
-                    decoded += "" + (char) GSM7CHARS[j];//Do translation
+                    decoded.append("").append((char) GSM7CHARS[j]);//Do translation
                 }
             }
         }
-
-        return decoded;
+        return decoded.toString();
     }
 
     private String fromHexTo8BitBinary(String hex) {
-        String ret = "";
+        StringBuilder ret = new StringBuilder();
         String binary = Integer.toBinaryString(Integer.parseInt(hex, 16));//Convert hex to binary
         int length = 8 - binary.length();
         for (int i = 0; i < length; i++) {
-            ret += "0";//Append missing 0's
+            ret.append("0");//Append missing 0's
         }
-        ret += binary;
-        return ret;
+        ret.append(binary);
+        return ret.toString();
     }
 
     private String from7BitBinaryToHexReversed(String binary) {
@@ -96,11 +95,11 @@ public class Gsm7BitEncoderDecoder
 
     private String makeSevenBits(String binaryStr) {
         String ret = "";
-        String zeros = "";
+        StringBuilder zeros = new StringBuilder();
         int length = binaryStr.length();
         int appends = 7 - length;
         for (int i = 0; i < appends; i++) {
-            zeros += "0";//Append missing 0's to make 7 bits
+            zeros.append("0");//Append missing 0's to make 7 bits
         }
         ret = zeros + binaryStr;
         return ret;
