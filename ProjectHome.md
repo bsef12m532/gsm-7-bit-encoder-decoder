@@ -1,0 +1,1 @@
+Java implementation to encode and decode GSM 7 bits which is used on mobile networks for ussd, sms etc.
